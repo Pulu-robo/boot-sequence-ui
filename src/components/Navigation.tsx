@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { gsap } from 'gsap';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X, Github, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface NavItem {
   label: string;
   href: string;
+  isExternal?: boolean;
+  isChat?: boolean;
 }
 
 const navItems: NavItem[] = [
   { label: 'Overview', href: '#hero' },
   { label: 'How It Works', href: '#features' },
   { label: 'Architecture', href: '#architecture' },
-  { label: 'Evidence & Safety', href: '#safety' },
-  { label: 'GitHub', href: 'https://github.com' },
+  { label: 'Chat with AXIOM', href: '/chat', isChat: true },
+  { label: 'GitHub', href: 'https://github.com', isExternal: true },
 ];
 
 const Navigation: React.FC = () => {
@@ -22,7 +25,6 @@ const Navigation: React.FC = () => {
     setIsOpen(!isOpen);
     
     if (!isOpen) {
-      // Animate menu items in
       gsap.fromTo(
         '.nav-item',
         { x: 50, opacity: 0 },
@@ -82,24 +84,41 @@ const Navigation: React.FC = () => {
           <ul className="space-y-6 text-right">
             {navItems.map((item, index) => (
               <li key={item.label} className="nav-item opacity-0">
-                <a
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="cursor-target group flex items-center justify-end gap-4 text-2xl md:text-4xl font-medium text-foreground hover:text-primary transition-colors duration-300"
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  <span className="text-sm text-muted-foreground font-mono">
-                    0{index + 1}
-                  </span>
-                  <span className="relative">
-                    {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                  </span>
-                  {item.label === 'GitHub' && (
-                    <Github size={24} className="ml-2" />
-                  )}
-                </a>
+                {item.isChat ? (
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="cursor-target group flex items-center justify-end gap-4 text-2xl md:text-4xl font-medium text-primary hover:text-secondary transition-colors duration-300"
+                  >
+                    <span className="text-sm text-muted-foreground font-mono">
+                      0{index + 1}
+                    </span>
+                    <span className="relative">
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    <MessageSquare size={24} className="ml-2" />
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="cursor-target group flex items-center justify-end gap-4 text-2xl md:text-4xl font-medium text-foreground hover:text-primary transition-colors duration-300"
+                    target={item.isExternal ? '_blank' : undefined}
+                    rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                  >
+                    <span className="text-sm text-muted-foreground font-mono">
+                      0{index + 1}
+                    </span>
+                    <span className="relative">
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    {item.label === 'GitHub' && (
+                      <Github size={24} className="ml-2" />
+                    )}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
