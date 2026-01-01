@@ -1,96 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AXIOM Design System - Retro-Futuristic / 8-bit Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette - Dark background with neon accents */
+    --background: 220 20% 4%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 6%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Electric Violet - Primary accent */
+    --primary: 261 68% 77%;
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Acid Green - Secondary accent */
+    --secondary: 94 71% 79%;
+    --secondary-foreground: 220 20% 4%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Cyan accent */
+    --accent: 188 91% 70%;
+    --accent-foreground: 220 20% 4%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 261 68% 77%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom AXIOM tokens */
+    --glow-primary: 261 68% 77%;
+    --glow-secondary: 94 71% 79%;
+    --glow-accent: 188 91% 70%;
+    
+    /* Scanline effect */
+    --scanline-opacity: 0.03;
+    
+    /* Sidebar */
+    --sidebar-background: 220 15% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 261 68% 77%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 261 68% 77%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 20% 4%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 261 68% 77%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 94 71% 79%;
+    --secondary-foreground: 220 20% 4%;
+    --accent: 188 91% 70%;
+    --accent-foreground: 220 20% 4%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 261 68% 77%;
   }
 }
 
@@ -100,6 +90,202 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Pixel font for AXIOM branding */
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  /* Scanline overlay effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--foreground) / var(--scanline-opacity)) 2px,
+      hsl(var(--foreground) / var(--scanline-opacity)) 4px
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+}
+
+@layer components {
+  /* Glitch text animation */
+  @keyframes glitch {
+    0%, 100% {
+      text-shadow: 
+        2px 0 hsl(var(--accent)),
+        -2px 0 hsl(var(--secondary));
+    }
+    25% {
+      text-shadow: 
+        -2px 0 hsl(var(--accent)),
+        2px 0 hsl(var(--secondary));
+    }
+    50% {
+      text-shadow: 
+        2px 2px hsl(var(--accent)),
+        -2px -2px hsl(var(--secondary));
+    }
+    75% {
+      text-shadow: 
+        -2px 2px hsl(var(--accent)),
+        2px -2px hsl(var(--secondary));
+    }
+  }
+
+  .glitch-text {
+    animation: glitch 3s infinite;
+  }
+
+  /* Neon glow effects */
+  .glow-primary {
+    text-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary) / 0.5),
+      0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-secondary {
+    text-shadow: 
+      0 0 5px hsl(var(--secondary)),
+      0 0 10px hsl(var(--secondary)),
+      0 0 20px hsl(var(--secondary) / 0.5);
+  }
+
+  .glow-accent {
+    text-shadow: 
+      0 0 5px hsl(var(--accent)),
+      0 0 10px hsl(var(--accent)),
+      0 0 20px hsl(var(--accent) / 0.5);
+  }
+
+  /* Box glow effects */
+  .box-glow-primary {
+    box-shadow: 
+      0 0 5px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3),
+      inset 0 0 10px hsl(var(--primary) / 0.1);
+  }
+
+  .box-glow-secondary {
+    box-shadow: 
+      0 0 5px hsl(var(--secondary) / 0.5),
+      0 0 20px hsl(var(--secondary) / 0.3),
+      inset 0 0 10px hsl(var(--secondary) / 0.1);
+  }
+
+  /* Pixel border animation */
+  @keyframes pixel-border {
+    0%, 100% {
+      border-color: hsl(var(--primary));
+    }
+    33% {
+      border-color: hsl(var(--secondary));
+    }
+    66% {
+      border-color: hsl(var(--accent));
+    }
+  }
+
+  .pixel-border-animate {
+    animation: pixel-border 4s infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Boot sequence flicker */
+  @keyframes boot-flicker {
+    0%, 100% { opacity: 1; }
+    10% { opacity: 0.8; }
+    20% { opacity: 1; }
+    30% { opacity: 0.9; }
+    40% { opacity: 1; }
+    50% { opacity: 0.85; }
+    60% { opacity: 1; }
+  }
+
+  .boot-flicker {
+    animation: boot-flicker 0.5s ease-out;
+  }
+
+  /* Cursor blink */
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: cursor-blink 1s infinite;
+  }
+
+  /* Feature card styles */
+  .feature-card {
+    @apply relative bg-card border-2 border-primary/30 rounded-sm p-6 transition-all duration-300;
+  }
+
+  .feature-card:hover {
+    @apply border-primary box-glow-primary;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary)),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Pixel perfect rendering */
+  .pixel-perfect {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
   }
 }
