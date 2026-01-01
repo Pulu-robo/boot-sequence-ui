@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   return (
@@ -50,21 +51,33 @@ const HeroSection: React.FC = () => {
           Decision systems that evaluate actions, not predict outcomes.
         </p>
 
-        {/* CTA Button */}
-        <Button
-          variant="hero"
-          size="lg"
-          className="cursor-target group"
-          onClick={() => {
-            const featuresSection = document.getElementById('features');
-            if (featuresSection) {
-              featuresSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          <span>Explore AXIOM</span>
-          <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-        </Button>
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap gap-4">
+          <Link to="/chat">
+            <Button
+              variant="hero"
+              size="lg"
+              className="cursor-target group"
+            >
+              <MessageSquare className="mr-2 w-5 h-5" />
+              <span>Chat with AXIOM</span>
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+          <Button
+            variant="outline"
+            size="lg"
+            className="cursor-target border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            onClick={() => {
+              const featuresSection = document.getElementById('features');
+              if (featuresSection) {
+                featuresSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            <span>Explore Features</span>
+          </Button>
+        </div>
 
         {/* Decorative line */}
         <div className="mt-16 flex items-center gap-4">
