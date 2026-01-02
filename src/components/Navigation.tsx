@@ -14,7 +14,8 @@ const navItems: NavItem[] = [
   { label: 'Overview', href: '#hero' },
   { label: 'How It Works', href: '#features' },
   { label: 'Architecture', href: '#architecture' },
-  { label: 'Chat with AXIOM', href: '/chat', isChat: true },
+  { label: 'Evidence & Safety', href: '#evidence' },
+  { label: 'Chat', href: '/chat', isChat: true },
   { label: 'GitHub', href: 'https://github.com', isExternal: true },
 ];
 
