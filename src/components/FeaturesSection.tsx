@@ -74,14 +74,14 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({ feature, i
   );
 
   const secondContent = (
-    <div className="absolute inset-0 p-6 flex flex-col bg-primary/10">
+    <div className="absolute inset-0 p-6 flex flex-col bg-card/95 backdrop-blur-sm">
       <div className="text-secondary mb-4">
         {feature.icon}
       </div>
-      <h3 className="text-lg font-semibold text-foreground mb-2">
+      <h3 className="text-lg font-semibold text-foreground mb-3">
         {feature.title}
       </h3>
-      <p className="text-sm text-foreground/90 flex-1">
+      <p className="text-sm text-foreground leading-relaxed flex-1">
         {feature.detail}
       </p>
       <div className="mt-4 flex items-center gap-2">

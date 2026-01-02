@@ -3,7 +3,7 @@ import { Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative py-16 px-6 md:px-16 border-t border-border">
+    <footer className="relative py-16 px-6 md:px-16 border-t border-border bg-background/80 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo and tagline */}

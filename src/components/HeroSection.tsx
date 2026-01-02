@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import PixelBlast from '@/components/ui/PixelBlast';
 
 const HeroSection: React.FC = () => {
   return (
@@ -9,28 +10,8 @@ const HeroSection: React.FC = () => {
       id="hero" 
       className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 pt-24 pb-16"
     >
-      {/* Subtle pixel grid background */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `
-            linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '20px 20px'
-        }}
-      />
-
-      {/* Gradient orb */}
-      <div 
-        className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)'
-        }}
-      />
-
       {/* Content */}
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-50 max-w-4xl mx-auto md:mx-0 md:ml-[10%] pointer-events-auto">
         {/* AXIOM wordmark */}
         <h1 className="font-pixel text-5xl md:text-7xl lg:text-8xl text-primary glitch-text glow-primary mb-6">
           AXIOM
@@ -52,12 +33,12 @@ const HeroSection: React.FC = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4">
-          <Link to="/chat">
+        <div className="flex flex-wrap gap-4 relative z-50 pointer-events-auto">
+          <Link to="/chat" className="pointer-events-auto">
             <Button
               variant="hero"
               size="lg"
-              className="cursor-target group"
+              className="cursor-target group pointer-events-auto"
             >
               <MessageSquare className="mr-2 w-5 h-5" />
               <span>Chat with AXIOM</span>
@@ -67,7 +48,7 @@ const HeroSection: React.FC = () => {
           <Button
             variant="outline"
             size="lg"
-            className="cursor-target border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            className="cursor-target border-border text-muted-foreground hover:text-foreground hover:border-primary/50 pointer-events-auto"
             onClick={() => {
               const featuresSection = document.getElementById('features');
               if (featuresSection) {
@@ -89,7 +70,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Corner brackets */}
-      <div className="absolute bottom-8 right-8 hidden md:block">
+      <div className="absolute bottom-8 right-8 hidden md:block pointer-events-none">
         <div className="w-24 h-24 border-r-2 border-b-2 border-primary/20" />
       </div>
     </section>
