@@ -84,7 +84,7 @@ const Navigation: React.FC = () => {
         <nav className="relative z-10 h-full flex flex-col justify-center items-end pr-8 md:pr-16">
           <ul className="space-y-6 text-right">
             {navItems.map((item, index) => (
-              <li key={item.label} className="nav-item opacity-0">
+              <li key={item.label} className={`nav-item transition-all duration-300 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`} style={{ transitionDelay: `${index * 100 + 200}ms` }}>
                 {item.isChat ? (
                   <Link
                     to={item.href}
