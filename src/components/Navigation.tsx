@@ -3,9 +3,12 @@ import StaggeredMenu from './StaggeredMenu';
 import type { StaggeredMenuItem, StaggeredMenuSocialItem } from './StaggeredMenu';
 
 const menuItems: StaggeredMenuItem[] = [
-  { label: 'Architecture', ariaLabel: 'View architecture', link: '#architecture' },
-  { label: 'Evidence & Safety', ariaLabel: 'Learn about evidence and safety', link: '#evidence' },
+  { label: 'Overview', ariaLabel: 'Go to overview', link: '/#overview' },
+  { label: 'How It Works', ariaLabel: 'Learn how it works', link: '/#how-it-works' },
+  { label: 'Architecture', ariaLabel: 'View architecture', link: '/architecture' },
+  { label: 'Evidence & Safety', ariaLabel: 'Learn about evidence and safety', link: '/#evidence' },
   { label: 'Chat', ariaLabel: 'Go to chat', link: '/chat' },
+  { label: 'GitHub', ariaLabel: 'View on GitHub', link: 'https://github.com' },
 ];
 
 const socialItems: StaggeredMenuSocialItem[] = [
